@@ -21,8 +21,9 @@ return new class () extends Migration {
             $table->dateTime('last_login_at')->nullable();
             $table->integer('total_time_spent')->default(0); // в минутах или секундах
             $table->enum('role', ['admin', 'manager', 'user'])->default('user');
-            $table->rememberToken();
+            $table->string('avatar')->default('/storage/image/avatar/default.jpg');
 
+            $table->rememberToken();
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();
         });
